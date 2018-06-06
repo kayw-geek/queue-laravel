@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::get('a',"UserController@store");
+Route::get('ab',"UserController@echogit ar");

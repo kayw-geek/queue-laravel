@@ -16,4 +16,9 @@ class UserController extends Controller
        }
        echo "Done";
     }
+
+    public function echo()
+    {
+        dd('ghjkl');
+    }
 }
