@@ -6,6 +6,7 @@ use App\Jobs\SendMailQueue;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redis;
+use phpDocumentor\Reflection\DocBlock\Serializer;
 
 class UserController extends Controller
 {
@@ -33,5 +34,14 @@ class UserController extends Controller
         Redis::set('name','weikai');
         $name = Redis::get('name');
         dd($name);
+    }
+
+    public function redisHset()
+    {
+        $users  = User::get()->toJson();
+//        dd($users);
+        Redis::set('userjson',$users);
+        $rusers = Redis::get('userjson');
+        dd($rusers);
     }
 }

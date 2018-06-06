@@ -18,3 +18,4 @@ Route::get('/', function () {
 Route::get('a',"UserController@store");
 Route::get('ab',"UserController@echo");
 Route::get('rset',"UserController@redisSet");
+Route::get('hset',"UserController@redisHset");
