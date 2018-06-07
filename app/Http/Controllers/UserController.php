@@ -38,10 +38,20 @@ class UserController extends Controller
 
     public function redisHset()
     {
+        $users  = User::get()->toArray();
+//        dd($users);
+        Redis::hmset('userarray',$users);
+        $rusers = Redis::hmget('userarray');
+        dd($rusers);
+    }
+
+
+    public function redisJson()
+    {
         $users  = User::get()->toJson();
 //        dd($users);
-        Redis::set('userjson',$users);
-        $rusers = Redis::get('userjson');
+        Redis::hmset('userjson',$users);
+        $rusers = Redis::hmget('userjson');
         dd($rusers);
     }
 }
