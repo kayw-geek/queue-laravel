@@ -20,3 +20,5 @@ Route::get('ab',"UserController@echo");
 Route::get('rset',"UserController@redisSet");
 Route::get('rhset',"UserController@redisJson");
 Route::get('test',"UserController@test");
+Route::get('publish',"UserController@redisPublish");
+Route::get('psubscribe',"UserController@redisPsubscribe");

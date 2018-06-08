@@ -76,4 +76,15 @@ class UserController extends Controller
 //        dd(Redis::llen('list1'));//返回list1长度
 
     }
+
+    /**
+     * @name:redis 发布订阅
+     * @author: weikai
+     * @date: 2018/6/8 15:03
+     */
+    public function redisPublish(){
+        Redis::publish('weikai:test',json_encode(['aaa'=>'vvv']));
+    }
+
+
 }
